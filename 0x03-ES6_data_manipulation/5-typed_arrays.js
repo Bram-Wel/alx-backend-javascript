@@ -7,7 +7,7 @@ export default function createInt8TypedArray(length, position, value) {
     dataview.setInt8(position, value);
   } catch (err) {
     if (err instanceof RangeError) {
-      console.log('Position outside range');
+      throw new Error('Position outside range');
     } else {
       throw err;
     }
